@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Inicializar la matriz del juego 
-
-board=(. . . . . . . . .)
+reiniciar() {
+    board=(. . . . . . . . .)
+}
 
 
 
@@ -24,6 +25,8 @@ print_board() {
 
 opcion=0
 
+reiniciar
+
 while [ $opcion -ne "4" ]
 do
     echo ""
@@ -38,6 +41,7 @@ do
     echo "OPCIÓN 2: JUGADOR 1: MOVER."
     echo "OPCIÓN 3: JUGADOR 2: MOVER."
     echo "OPCIÓN 4: SALIR DEL JUEGO."
+    echo "OPCIÓN 5: VER ESTADÍSTICAS."
     echo "----------------------------------------------"
     echo " "
     read -p "Selecciona una opcióN (1..4): " opcion
@@ -46,7 +50,7 @@ do
     case $opcion in 
     "1")
     ##INSERTAR CÓDIGO PARA REINICIAR PARTIDA
-    ##AÑADIR LLAMADA A SCRIPT DE TABLERO VACÍO
+    reiniciar
     ;;
     "2")
     ##AÑADIR CÓDIGO MOVER JUGADOR 1
@@ -57,6 +61,9 @@ do
     "4")
     echo "FIN DEL JUEGO."
     break
+    ;;
+    "5")
+    ##AÑADIR ESTADÍSTICAS
     ;;
     esac
 
