@@ -104,7 +104,11 @@ do
     juegoPrincipal    
     ;;
     "2")
-    echo "Modo Fiesta" 
+    echo ""
+    echo "============================================="
+    echo "----------------MODO FIESTA----------------"
+    echo "============================================="
+    echo ""
 	# Por programar (HUGO)
     "3")
     echo "FIN DEL JUEGO."
