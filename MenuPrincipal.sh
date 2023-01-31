@@ -31,6 +31,8 @@ do
     echo "----------------TRES EN RAYA----------------"
     echo "============================================="
     echo ""
+    ./pruebatablero.sh          ##LLAMAMOS AL SCRIPT QUE VISUALIZA EL TABLERO CON LOS NUMEROS ORIENTATIVOS
+    echo ""
     echo "-------------MENU DE OPCIONES------------------"
     echo "OPCIÓN 1: REINICIAR PARTIDA."
     echo "OPCIÓN 2: JUGADOR 1: MOVER."
@@ -43,13 +45,14 @@ do
 
     case $opcion in 
     "1")
-    ##AÑADIR LLAMADA A SCRIPT
+    ##INSERTAR CÓDIGO PARA REINICIAR PARTIDA
+    ##AÑADIR LLAMADA A SCRIPT DE TABLERO VACÍO
     ;;
     "2")
-    ##AÑADIR LLAMADA A SCRIPT
+    ##AÑADIR CÓDIGO MOVER JUGADOR 1
     ;;
     "3")
-    ##AÑADIR LLAMADA A SCRIPT
+    ##AÑADIR CÓDIGO MOVER JUGADOR 2
     ;;
     "4")
     echo "FIN DEL JUEGO."
