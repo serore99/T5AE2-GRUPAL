@@ -38,4 +38,3 @@ print_board() {
 
 }
 print_board_info
-print_board
