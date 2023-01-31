@@ -20,21 +20,6 @@ echo "Estas son las posiciones del tablero: "
   echo "---+---+---" 
 
   echo " ${board_info[6]} | ${board_info[7]} | ${board_info[8]} " 
-
 }
 
-
-print_board() {
-
-  echo " ${board[0]} | ${board[1]} | ${board[2]} " 
-
-  echo "---+---+---" 
-
-  echo " ${board[3]} | ${board[4]} | ${board[5]} " 
-
-  echo "---+---+---" 
-
-  echo " ${board[6]} | ${board[7]} | ${board[8]} " 
-
-}
 print_board_info
