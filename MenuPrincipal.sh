@@ -5,7 +5,40 @@ reiniciar() {
     board=(. . . . . . . . .)
 }
 
+# Función para verificar si alguien ganó 
 
+check_win() { 
+
+  player=$1 
+
+  if [ ${board[0]} == $player ] && [ ${board[1]} == $player ] && [ ${board[2]} == $player ]; then 
+    echo "$player wins!" 
+    return 0 
+  elif [ ${board[3]} == $player ] && [ ${board[4]} == $player ] && [ ${board[5]} == $player ]; then 
+    echo "$player wins!" 
+    return 0 
+  elif [ ${board[6]} == $player ] && [ ${board[7]} == $player ] && [ ${board[8]} == $player ]; then 
+    echo "$player wins!" 
+    return 0 
+  elif [ ${board[0]} == $player ] && [ ${board[3]} == $player ] && [ ${board[6]} == $player ]; then 
+    echo "$player wins!" 
+    return 0 
+  elif [ ${board[1]} == $player ] && [ ${board[4]} == $player ] && [ ${board[7]} == $player ]; then 
+    echo "$player wins!" 
+    return 0 
+  elif [ ${board[2]} == $player ] && [ ${board[5]} == $player ] && [ ${board[8]} == $player ]; then 
+    echo "$player wins!" 
+    return 0 
+  elif [ ${board[0]} == $player ] && [ ${board[4]} == $player ] && [ ${board[8]} == $player ]; then 
+    echo "$player wins!" 
+    return 0 
+  elif [ ${board[2]} == $player ] && [ ${board[4]} == $player ] && [ ${board[6]} == $player ]; then 
+    echo "$player wins!" 
+    return 0 
+  else 
+    return 1 
+  fi 
+} 
 
 # Función para imprimir la matriz
 
@@ -66,9 +99,17 @@ do
     ;;
     "2")
     ##AÑADIR CÓDIGO MOVER JUGADOR 1
+    player="X"
+    if check_win $player; then 
+    exit 0 
+    fi
     ;;
     "3")
     ##AÑADIR CÓDIGO MOVER JUGADOR 2
+    player="O"
+    if check_win $player; then 
+    exit 0 
+    fi
     ;;
     "4")
     echo "FIN DEL JUEGO."
