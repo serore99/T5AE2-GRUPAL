@@ -104,10 +104,13 @@ do
     
     ;;
     "2")
+    echo "Modo Fiesta" 
+	# Por programar (HUGO)
+    "3")
     echo "FIN DEL JUEGO."
     break
     ;;
-    "3")
+    "4")
     ##AÑADIR ESTADÍSTICAS
     ;;
     esac
