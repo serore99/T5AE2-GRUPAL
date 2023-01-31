@@ -5,8 +5,47 @@ reiniciar() {
     board=(. . . . . . . . .)
 }
 
+juegoPrincipal() {
+    echo "EMPEZANDO PARTIDA..." 
 
+print_board 
 
+  
+
+player="X" 
+
+move=0 
+
+  
+
+while [ $move -lt 9 ]; do 
+
+  echo "Turno de $player. ¿Dónde quieres mover? (0-8)" 
+
+  read move 
+
+  mark $player $move 
+
+  print_board 
+
+  if check_win $player; then 
+
+    exit 0 
+
+  fi 
+
+  if [ $player == "X" ]; then 
+
+    player="O" 
+
+  else 
+
+    player="X" 
+
+  fi 
+
+done 
+}
 # Función para imprimir la matriz
 
 print_board() {
@@ -50,31 +89,25 @@ do
     echo ""
     echo "-------------MENU DE OPCIONES------------------"
     echo "OPCIÓN 1: REINICIAR PARTIDA."
-    echo "OPCIÓN 2: JUGADOR 1: MOVER."
-    echo "OPCIÓN 3: JUGADOR 2: MOVER."
-    echo "OPCIÓN 4: SALIR DEL JUEGO."
-    echo "OPCIÓN 5: VER ESTADÍSTICAS."
+    echo "OPCIÓN 2: SALIR DEL JUEGO."
+    echo "OPCIÓN 3: VER ESTADÍSTICAS."
     echo "----------------------------------------------"
     echo " "
-    read -p "Selecciona una opcióN (1..4): " opcion
+    read -p "Selecciona una opcióN (1..3): " opcion
     echo " "
 
     case $opcion in 
     "1")
-    ##INSERTAR CÓDIGO PARA REINICIAR PARTIDA
+    ##INSERTAR CÓDIGO PARA EMPEZAR PARTIDA
     reiniciar
+    juegoPrincipal
+    
     ;;
     "2")
-    ##AÑADIR CÓDIGO MOVER JUGADOR 1
-    ;;
-    "3")
-    ##AÑADIR CÓDIGO MOVER JUGADOR 2
-    ;;
-    "4")
     echo "FIN DEL JUEGO."
     break
     ;;
-    "5")
+    "3")
     ##AÑADIR ESTADÍSTICAS
     ;;
     esac
