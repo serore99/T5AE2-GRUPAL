@@ -1,30 +1,16 @@
 #!/bin/bash 
 
-
+  
 
 # Inicializar la matriz del juego 
 
-board=(. . . . . . . . .)
-board_info=(0 1 2 3 4 5 6 7 8)
+board=(. . . . . . . . .) 
 
+  
 
 # Función para imprimir la matriz 
-print_board_info(){
-echo "Estas son las posiciones del tablero: "
-  echo " ${board_info[0]} | ${board_info[1]} | ${board_info[2]} " 
 
-  echo "---+---+---" 
-
-  echo " ${board_info[3]} | ${board_info[4]} | ${board_info[5]} " 
-
-  echo "---+---+---" 
-
-  echo " ${board_info[6]} | ${board_info[7]} | ${board_info[8]} " 
-
-}
-
-
-print_board() {
+print_board() { 
 
   echo " ${board[0]} | ${board[1]} | ${board[2]} " 
 
@@ -36,5 +22,126 @@ print_board() {
 
   echo " ${board[6]} | ${board[7]} | ${board[8]} " 
 
-}
-print_board_info
+} 
+
+  
+
+# Función para marcar una casilla 
+
+mark() { 
+
+  player=$1 
+
+  move=$2 
+
+  board[$move]=$player 
+
+} 
+
+  
+
+# Función para verificar si alguien ganó 
+
+check_win() { 
+
+  player=$1 
+
+  if [ ${board[0]} == $player ] && [ ${board[1]} == $player ] && [ ${board[2]} == $player ]; then 
+
+    echo "$player wins!" 
+
+    return 0 
+
+  elif [ ${board[3]} == $player ] && [ ${board[4]} == $player ] && [ ${board[5]} == $player ]; then 
+
+    echo "$player wins!" 
+
+    return 0 
+
+  elif [ ${board[6]} == $player ] && [ ${board[7]} == $player ] && [ ${board[8]} == $player ]; then 
+
+    echo "$player wins!" 
+
+    return 0 
+
+  elif [ ${board[0]} == $player ] && [ ${board[3]} == $player ] && [ ${board[6]} == $player ]; then 
+
+    echo "$player wins!" 
+
+    return 0 
+
+  elif [ ${board[1]} == $player ] && [ ${board[4]} == $player ] && [ ${board[7]} == $player ]; then 
+
+    echo "$player wins!" 
+
+    return 0 
+
+  elif [ ${board[2]} == $player ] && [ ${board[5]} == $player ] && [ ${board[8]} == $player ]; then 
+
+    echo "$player wins!" 
+
+    return 0 
+
+  elif [ ${board[0]} == $player ] && [ ${board[4]} == $player ] && [ ${board[8]} == $player ]; then 
+
+    echo "$player wins!" 
+
+    return 0 
+
+  elif [ ${board[2]} == $player ] && [ ${board[4]} == $player ] && [ ${board[6]} == $player ]; then 
+
+    echo "$player wins!" 
+
+    return 0 
+
+  else 
+
+    return 1 
+
+  fi 
+
+} 
+
+  
+
+# Juego principal 
+
+echo "Bienvenido al juego 3 en raya!" 
+
+print_board 
+
+  
+
+player="X" 
+
+move=0 
+
+  
+
+while [ $move -lt 9 ]; do 
+
+  echo "Turno de $player. ¿Dónde quieres mover? (0-8)" 
+
+  read move 
+
+  mark $player $move 
+
+  print_board 
+
+  if check_win $player; then 
+
+    exit 0 
+
+  fi 
+
+  if [ $player == "X" ]; then 
+
+    player="O" 
+
+  else 
+
+    player="X" 
+
+  fi 
+
+done 
