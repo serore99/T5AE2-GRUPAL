@@ -99,10 +99,11 @@ do
     echo "----------------TRES EN RAYA----------------"
     echo "============================================="
     echo ""
-    ./pruebatablero.sh          ##LLAMAMOS AL SCRIPT QUE VISUALIZA EL TABLERO CON LOS NUMEROS ORIENTATIVOS
+    ./pruebatablero.sh         ##LLAMAMOS AL SCRIPT QUE VISUALIZA EL TABLERO CON LOS NUMEROS ORIENTATIVOS
     echo ""
     echo "-------------MENU DE OPCIONES------------------"
-    echo "OPCIÓN 1: REINICIAR PARTIDA."
+    echo "OPCIÓN 1: EMPEZAR PARTIDA."
+    echo "OPCIÓN 2: MODO FIESTA."
     echo "OPCIÓN 2: SALIR DEL JUEGO."
     echo "OPCIÓN 3: VER ESTADÍSTICAS."
     echo "----------------------------------------------"
@@ -114,14 +115,16 @@ do
     "1")
     ##INSERTAR CÓDIGO PARA EMPEZAR PARTIDA
     reiniciar
-    juegoPrincipal
-    
+    juegoPrincipal    
     ;;
     "2")
+    echo "Modo Fiesta" 
+	# Por programar (HUGO)
+    "3")
     echo "FIN DEL JUEGO."
     break
     ;;
-    "3")
+    "4")
     ##AÑADIR ESTADÍSTICAS
     ;;
     esac
