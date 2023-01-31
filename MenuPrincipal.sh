@@ -5,6 +5,16 @@ reiniciar() {
     board=(. . . . . . . . .)
 }
 
+check_used(){
+    move=$1;
+    if [ ${board[$move]} == . ]; then
+    return 0
+    else
+    return 1
+    fi
+
+}
+
 juegoPrincipal() {
     echo "EMPEZANDO PARTIDA..." 
 
@@ -16,23 +26,24 @@ player="X"
 
 move=0 
 
-  
-
-while [ $move -lt 9 ]; do 
+while [ true ]; do 
 
   echo "Turno de $player. ¿Dónde quieres mover? (0-8)" 
 
   read move 
 
+  if check_used $move; then
   mark $player $move 
 
-  print_board 
+ 
 
-  if check_win $player; then 
-
-    exit 0 
+  if check_win $player; then
+  
+    print_board; 
+    exit 0; 
 
   fi 
+  
 
   if [ $player == "X" ]; then 
 
@@ -42,9 +53,12 @@ while [ $move -lt 9 ]; do
 
     player="X" 
 
-  fi 
-
-done 
+  fi
+  else
+  echo "La celda esta ocupada"
+  fi
+    print_board
+done
 }
 # Función para imprimir la matriz
 
