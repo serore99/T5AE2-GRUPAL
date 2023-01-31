@@ -23,6 +23,18 @@ print_board() {
 
 }
 
+# Función para marcar una casilla 
+
+mark() { 
+
+  player=$1 
+
+  move=$2 
+
+  board[$move]=$player 
+
+} 
+
 opcion=0
 
 reiniciar
