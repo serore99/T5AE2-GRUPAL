@@ -85,7 +85,7 @@ do
     echo "----------------TRES EN RAYA----------------"
     echo "============================================="
     echo ""
-    ./pruebatablero.sh          ##LLAMAMOS AL SCRIPT QUE VISUALIZA EL TABLERO CON LOS NUMEROS ORIENTATIVOS
+              ##LLAMAMOS AL SCRIPT QUE VISUALIZA EL TABLERO CON LOS NUMEROS ORIENTATIVOS
     echo ""
     echo "-------------MENU DE OPCIONES------------------"
     echo "OPCIÓN 1: REINICIAR PARTIDA."
