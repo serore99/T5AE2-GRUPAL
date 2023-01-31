@@ -1,5 +1,27 @@
 #!/bin/bash
 
+# Inicializar la matriz del juego 
+
+board=(. . . . . . . . .)
+
+
+
+# Función para imprimir la matriz
+
+print_board() {
+
+  echo " ${board[0]} | ${board[1]} | ${board[2]} "
+
+  echo "---+---+---"
+
+  echo " ${board[3]} | ${board[4]} | ${board[5]} "
+
+  echo "---+---+---"
+
+  echo " ${board[6]} | ${board[7]} | ${board[8]} "
+
+}
+
 opcion=0
 
 while [ $opcion -ne "4" ]
